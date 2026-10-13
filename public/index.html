@@ -4,28 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Goals</title>
-  <meta name="theme-color" content="#4f46e5">
+  <meta name="theme-color" content="#ffd6e8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>My Goals</h1>
+    <div class="brand"><span class="logo">🦉</span><h1>My Goals</h1></div>
     <span id="sync" class="sync">…</span>
   </header>
+
+  <section class="hero">
+    <button id="mascot" class="mascot" title="Tap me!">🦉</button>
+    <div class="bubble" id="bubble">Hi there!</div>
+  </section>
+
+  <section class="level card" id="level"></section>
+
   <nav>
-    <button data-tab="today" class="active">Today</button>
-    <button data-tab="plan">Timetable</button>
-    <button data-tab="syllabus">Syllabus</button>
-    <button data-tab="tasks">Tasks</button>
+    <button data-tab="today" class="active">🏠 Today</button>
+    <button data-tab="calendar">📅 Calendar</button>
+    <button data-tab="plan">🗓️ Timetable</button>
+    <button data-tab="syllabus">📚 Syllabus</button>
+    <button data-tab="tasks">✅ Tasks</button>
+    <button data-tab="learn">🌟 Learn</button>
   </nav>
   <main id="app"></main>
 
+  <div id="toasts"></div>
+
   <dialog id="pinDialog">
     <form method="dialog">
-      <h3>Enter PIN</h3>
-      <p class="muted">Same PIN you set as APP_PIN on Netlify. Stored on this device only.</p>
+      <div class="big-emoji">🔐</div>
+      <h3>Secret PIN, please!</h3>
+      <p class="muted">The same PIN you set as APP_PIN on Netlify. It's remembered on this device.</p>
       <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" required>
-      <button>Unlock</button>
+      <button class="primary">Let me in ✨</button>
     </form>
   </dialog>
 
