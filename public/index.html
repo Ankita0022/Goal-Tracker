@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Goals</title>
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Goals</h1>
+    <span id="sync" class="sync">…</span>
+  </header>
+  <nav>
+    <button data-tab="today" class="active">Today</button>
+    <button data-tab="plan">Timetable</button>
+    <button data-tab="syllabus">Syllabus</button>
+    <button data-tab="tasks">Tasks</button>
+  </nav>
+  <main id="app"></main>
+
+  <dialog id="pinDialog">
+    <form method="dialog">
+      <h3>Enter PIN</h3>
+      <p class="muted">Same PIN you set as APP_PIN on Netlify. Stored on this device only.</p>
+      <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" required>
+      <button>Unlock</button>
+    </form>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
