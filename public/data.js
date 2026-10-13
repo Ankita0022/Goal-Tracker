@@ -32,7 +32,7 @@ const GOALS = [
   },
   {
     id: "sscje", name: "SSC JE", kind: "Exam", date: "2026-11-02", tentative: true, window: ["2026-11-02", "2026-11-06"],
-    note: "SSC JE has no CS paper (only Civil / Electrical / Mechanical). Edit the Technical topics in data.js to match the paper you actually applied for.",
+    note: "SSC JE has no CS paper (only Civil / Electrical / Mechanical). The technical topics below are placeholders until your paper is confirmed.",
     sections: {
       "General Intelligence & Reasoning": ["Revise RRB reasoning error log", "Analogy, classification, series", "Coding-decoding, blood relations, direction", "Syllogism & logical deduction", "Non-verbal reasoning"],
       "General Awareness": ["Current affairs refresh", "Static GK, polity, history", "Geography & economy", "General science"],

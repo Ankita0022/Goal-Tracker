@@ -184,7 +184,7 @@ function viewToday() {
     <div class="grid">${upcoming.map(countdownCard).join("")}</div>
     <h2>🗓️ Today's plan <span class="tag">${fmt(t)}</span> <span class="tag">${isWeekend(t) ? "☀️ Sunday — big study day" : "💼 Office day"}</span></h2>
     ${phase ? `<div class="card"><h3>${esc(phase.title)}</h3>${slotList(slotsFor(phase, t), true)}</div>`
-            : `<div class="card empty"><span class="big-emoji">🏝️</span>No plan for today. Add one in data.js.</div>`}
+            : `<div class="card empty"><span class="big-emoji">🏝️</span>No plan for today. Enjoy a free day, or add a task below! 🎈</div>`}
     <h2>✅ Today's to-do</h2>
     ${taskForm(t)}
     <div class="card">${tasks.length ? tasks.map(taskRow).join("") : emptyBox("📝", "Nothing here yet! Add what you'll study today.")}</div>`;
