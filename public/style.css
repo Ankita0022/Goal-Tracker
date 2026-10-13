@@ -250,3 +250,4 @@ dialog input { width: 100%; margin: 8px 0 14px; text-align: center; font-size: 1
 .cal-cell .num { font-size: .8rem; }
 .cal-cell .evs, .cal-cell.exam .evs { font-size: .95rem; }
 @media (max-width: 560px) { .cal-cell { height: 44px; } .cal-cell .evs, .cal-cell.exam .evs { font-size: .8rem; } }
+.pin-error { background: #ffe0e6; color: #be123c; border: 2px solid #be123c; border-radius: 12px; padding: 6px 10px; font-weight: 600; font-size: .9rem; animation: shake .3s ease 2; }

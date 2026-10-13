@@ -10,10 +10,12 @@ function setPin(p) { try { localStorage.setItem("mygoals-pin", p); } catch {} }
 function saveLocal() { try { localStorage.setItem(LOCAL_KEY, JSON.stringify(state)); } catch {} }
 function loadLocal() { try { const s = JSON.parse(localStorage.getItem(LOCAL_KEY)); if (s) state = { ...state, ...s }; } catch {} }
 
-function askPin() {
+function askPin(wrong) {
   return new Promise((resolve) => {
     const d = document.getElementById("pinDialog");
-    d.showModal();
+    document.getElementById("pinError").hidden = !wrong;
+    document.getElementById("pinInput").value = "";
+    if (!d.open) d.showModal();
     d.addEventListener("close", () => { setPin(document.getElementById("pinInput").value.trim()); resolve(); }, { once: true });
   });
 }
@@ -23,7 +25,7 @@ async function api(method, body) {
     method, headers: { "x-pin": getPin(), "content-type": "application/json" },
     body: body ? JSON.stringify(body) : undefined,
   });
-  if (res.status === 401) { await askPin(); return api(method, body); }
+  if (res.status === 401) { await askPin(!!getPin()); return api(method, body); }
   if (!res.ok) throw new Error(res.status);
   return res.json();
 }
