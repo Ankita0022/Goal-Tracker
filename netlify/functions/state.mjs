@@ -1,10 +1,12 @@
 import { getStore } from "@netlify/blobs";
 
-// Stores the whole tracker state as one JSON blob, protected by the APP_PIN env var.
+// Stores the whole tracker state as one JSON blob, protected by a PIN.
+// This file runs only on Netlify's server, so visitors can't see the PIN.
+// To change it, edit PIN below and push.
+const PIN = "021013";
+
 export default async (req) => {
-  const pin = process.env.APP_PIN;
-  if (!pin) return new Response("APP_PIN not configured", { status: 500 });
-  if (req.headers.get("x-pin") !== pin) return new Response("Unauthorized", { status: 401 });
+  if ((req.headers.get("x-pin") || "").trim() !== PIN) return new Response("Unauthorized", { status: 401 });
 
   const store = getStore("mygoals");
   if (req.method === "GET") {
